@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auth UI</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+.overlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,0.4);
+    display:flex;justify-content:flex-end;align-items:flex-start;
+    padding:20px;
+}
+
+.login-card,.signup-panel,.forgot-panel{
+    width:320px;background:#fff;padding:20px;border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    position:absolute;top:20px;right:20px;
+    transition:0.3s;
+}
+
+.hidden{
+    opacity:0;pointer-events:none;transform:translateX(40px);
+}
+
+h1,h2{margin-bottom:8px;}
+.subtitle{font-size:13px;color:#666;margin-bottom:10px;}
+
+.switch-text,.signin-text{
+    font-size:13px;color:#888;margin-bottom:15px;
+}
+.switch-text a,.signin-text a{
+    color:#00a870;font-weight:600;text-decoration:none;
+}
+.switch-text a:hover,.signin-text a:hover{text-decoration:underline;}
+
+.social-group{display:flex;gap:10px;margin-bottom:15px;}
+.social-item{
+    flex:1;height:45px;display:flex;align-items:center;justify-content:center;
+    border:1px solid #eee;border-radius:8px;background:#fff;cursor:pointer;
+}
+.social-item img,.social-item i{width:20px;height:20px;}
+.fa-facebook-f{color:#1877F2;}
+
+.divider{
+    display:flex;align-items:center;margin:15px 0;font-size:13px;color:#aaa;
+}
+.divider::before,.divider::after{
+    content:"";flex:1;height:1px;background:#eee;
+}
+.divider span{padding:0 8px;}
+
+input{
+    width:100%;padding:10px;margin-bottom:10px;
+    border:1px solid #eee;border-radius:6px;
+}
+
+.password-box{position:relative;}
+.toggle-password{
+    position:absolute;right:10px;top:50%;
+    transform:translateY(-50%);cursor:pointer;
+}
+
+.forgot-link{
+    display:block;font-size:12px;margin-bottom:15px;
+    color:#444;text-decoration:none;
+}
+.forgot-link:hover{text-decoration:underline;}
+
+.btn-signin,.btn-signup,.btn-reset{
+    width:100%;padding:10px;background:#00a870;color:#fff;
+    border:none;border-radius:6px;font-weight:bold;cursor:pointer;
+}
+
+.close-btn{
+    position:absolute;top:10px;right:10px;
+    border:none;background:none;font-size:18px;cursor:pointer;
+}
+
+/* forgot */
+.forgot-content{text-align:center;}
+.icon{font-size:30px;margin-bottom:10px;}
+.desc{font-size:13px;color:#666;margin-bottom:15px;}
+
+.back-text{font-size:13px;margin-top:12px;color:#888;}
+.back-text a{color:#00a870;text-decoration:none;}
+.back-text a:hover{text-decoration:underline;}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay" id="overlay">
+
+<!-- LOGIN -->
+<div class="login-card">
+<button class="close-btn">&times;</button>
+
+<h1>Sign in</h1>
+<p class="subtitle">Get access to more features</p>
+
+<p class="switch-text">
+Don't have an account? 
+<a href="#" id="toSignup">Register</a>
+</p>
+
+<div class="social-group">
+<button class="social-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
+</button>
+<button class="social-item"><i class="fab fa-facebook-f"></i></button>
+<button class="social-item"><i class="fab fa-github"></i></button>
+</div>
+
+<div class="divider"><span>or</span></div>
+
+<input type="email" placeholder="Email">
+
+<div class="password-box">
+<input type="password" placeholder="Password">
+<i class="far fa-eye toggle-password"></i>
+</div>
+
+<a href="#" class="forgot-link" id="toForgot">Forgot your password?</a>
+
+<button class="btn-signin">Sign In</button>
+</div>
+
+<!-- SIGNUP -->
+<div class="signup-panel hidden">
+<button class="close-btn">&times;</button>
+
+<h2>Sign up</h2>
+
+<p class="signin-text">
+Already have an account? 
+<a href="#" id="toLogin">Sign In</a>
+</p>
+
+<div class="social-group">
+<button class="social-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
+</button>
+<button class="social-item"><i class="fab fa-facebook-f"></i></button>
+<button class="social-item"><i class="fab fa-github"></i></button>
+</div>
+
+<div class="divider"><span>or</span></div>
+
+<input type="email" placeholder="Email">
+<input type="text" placeholder="First Name">
+<input type="text" placeholder="Last Name">
+
+<div class="password-box">
+<input type="password" placeholder="Password">
+<i class="far fa-eye toggle-password"></i>
+</div>
+
+<button class="btn-signup">Create account</button>
+</div>
+
+<!-- FORGOT -->
+<div class="forgot-panel hidden">
+<button class="close-btn">&times;</button>
+
+<div class="forgot-content">
+<i class="fa-regular fa-envelope icon"></i>
+
+<h2>Reset your password</h2>
+
+<p class="desc">
+If the account exists, we will email instructions to reset the password.
+</p>
+
+<input type="email" placeholder="Enter your email address">
+
+<button class="btn-reset">Send reset link</button>
+
+<p class="back-text">
+Return to <a href="#" id="backLogin">Sign In</a>
+</p>
+</div>
+</div>
+
+</div>
+
+<script>
+
+const login=document.querySelector(".login-card");
+const signup=document.querySelector(".signup-panel");
+const forgot=document.querySelector(".forgot-panel");
+const overlay=document.getElementById("overlay");
+
+/* SWITCH */
+document.getElementById("toSignup").onclick=e=>{
+e.preventDefault();
+login.classList.add("hidden");
+signup.classList.remove("hidden");
+};
+
+document.getElementById("toLogin").onclick=e=>{
+e.preventDefault();
+signup.classList.add("hidden");
+login.classList.remove("hidden");
+};
+
+document.getElementById("toForgot").onclick=e=>{
+e.preventDefault();
+login.classList.add("hidden");
+signup.classList.add("hidden");
+forgot.classList.remove("hidden");
+};
+
+document.getElementById("backLogin").onclick=e=>{
+e.preventDefault();
+forgot.classList.add("hidden");
+login.classList.remove("hidden");
+};
+
+/* CLOSE BUTTON */
+document.querySelectorAll(".close-btn").forEach(btn=>{
+btn.onclick=()=>overlay.style.display="none";
+});
+
+/* CLICK OUTSIDE */
+overlay.onclick=e=>{
+if(e.target===overlay) overlay.style.display="none";
+};
+
+/* ESC */
+document.onkeydown=e=>{
+if(e.key==="Escape") overlay.style.display="none";
+};
+
+</script>
+
+</body>
+</html>
