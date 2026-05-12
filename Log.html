@@ -8,88 +8,246 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* OVERLAY */
 .overlay{
-    position:fixed;inset:0;
+    position:fixed;
+    inset:0;
+
     background:rgba(0,0,0,0.4);
-    display:flex;justify-content:flex-end;align-items:flex-start;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+
     padding:20px;
 }
 
-.login-card,.signup-panel,.forgot-panel{
-    width:320px;background:#fff;padding:20px;border-radius:10px;
+/* CARD */
+.login-card,
+.signup-panel{
+    width:320px;
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:10px;
+
     box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    position:absolute;top:20px;right:20px;
+
+    position:absolute;
+    top:20px;
+    right:20px;
+
     transition:0.3s;
 }
 
+/* HIDDEN */
 .hidden{
-    opacity:0;pointer-events:none;transform:translateX(40px);
+    opacity:0;
+    pointer-events:none;
+    transform:translateX(40px);
 }
 
-h1,h2{margin-bottom:8px;}
-.subtitle{font-size:13px;color:#666;margin-bottom:10px;}
-
-.switch-text,.signin-text{
-    font-size:13px;color:#888;margin-bottom:15px;
+/* TEXT */
+h1,h2{
+    margin-bottom:8px;
 }
-.switch-text a,.signin-text a{
-    color:#00a870;font-weight:600;text-decoration:none;
-}
-.switch-text a:hover,.signin-text a:hover{text-decoration:underline;}
 
-.social-group{display:flex;gap:10px;margin-bottom:15px;}
+.subtitle{
+    font-size:13px;
+    color:#666;
+    margin-bottom:10px;
+}
+
+.switch-text,
+.signin-text{
+    font-size:13px;
+    color:#888;
+    margin-bottom:15px;
+}
+
+.switch-text a,
+.signin-text a{
+    color:#3B82F6;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.switch-text a:hover,
+.signin-text a:hover{
+    text-decoration:underline;
+}
+
+/* SOCIAL */
+.social-group{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
 .social-item{
-    flex:1;height:45px;display:flex;align-items:center;justify-content:center;
-    border:1px solid #eee;border-radius:8px;background:#fff;cursor:pointer;
-}
-.social-item img,.social-item i{width:20px;height:20px;}
-.fa-facebook-f{color:#1877F2;}
+    flex:1;
 
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #eee;
+    border-radius:8px;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.social-item:hover{
+    background:#f7f7f7;
+}
+
+.social-item img,
+.social-item i{
+    width:20px;
+    height:20px;
+}
+
+.fa-facebook-f{
+    color:#1877F2;
+}
+
+/* DIVIDER */
 .divider{
-    display:flex;align-items:center;margin:15px 0;font-size:13px;color:#aaa;
-}
-.divider::before,.divider::after{
-    content:"";flex:1;height:1px;background:#eee;
-}
-.divider span{padding:0 8px;}
+    display:flex;
+    align-items:center;
 
+    margin:15px 0;
+
+    font-size:13px;
+    color:#aaa;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#eee;
+}
+
+.divider span{
+    padding:0 8px;
+}
+
+/* INPUT */
 input{
-    width:100%;padding:10px;margin-bottom:10px;
-    border:1px solid #eee;border-radius:6px;
+    width:100%;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    border:1px solid #eee;
+    border-radius:6px;
+
+    outline:none;
+
+    transition:0.2s;
 }
 
-.password-box{position:relative;}
+input:focus{
+    border-color:#3B82F6;
+}
+
+/* ERROR */
+.error{
+    border-color:red !important;
+}
+
+/* ERROR TEXT */
+.error-text{
+    color:red;
+    font-size:12px;
+    margin-bottom:10px;
+    display:none;
+}
+
+/* PASSWORD */
+.password-box{
+    position:relative;
+}
+
 .toggle-password{
-    position:absolute;right:10px;top:50%;
-    transform:translateY(-50%);cursor:pointer;
+    position:absolute;
+
+    right:12px;
+    top:50%;
+
+    transform:translateY(-70%);
+
+    cursor:pointer;
+
+    color:#666;
 }
 
-.forgot-link{
-    display:block;font-size:12px;margin-bottom:15px;
-    color:#444;text-decoration:none;
-}
-.forgot-link:hover{text-decoration:underline;}
+/* BUTTON */
+.btn-signin,
+.btn-signup{
+    width:100%;
 
-.btn-signin,.btn-signup,.btn-reset{
-    width:100%;padding:10px;background:#00a870;color:#fff;
-    border:none;border-radius:6px;font-weight:bold;cursor:pointer;
+    padding:10px;
+
+    background:#3B82F6;
+
+    color:white;
+
+    border:none;
+    border-radius:6px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.2s;
 }
 
+.btn-signin:hover,
+.btn-signup:hover{
+    background:#2563EB;
+}
+
+/* CLOSE */
 .close-btn{
-    position:absolute;top:10px;right:10px;
-    border:none;background:none;font-size:18px;cursor:pointer;
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    border:none;
+    background:none;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    color:#666;
 }
 
-/* forgot */
-.forgot-content{text-align:center;}
-.icon{font-size:30px;margin-bottom:10px;}
-.desc{font-size:13px;color:#666;margin-bottom:15px;}
-
-.back-text{font-size:13px;margin-top:12px;color:#888;}
-.back-text a{color:#00a870;text-decoration:none;}
-.back-text a:hover{text-decoration:underline;}
+.close-btn:hover{
+    color:black;
+}
 
 </style>
 </head>
@@ -98,144 +256,362 @@ input{
 
 <div class="overlay" id="overlay">
 
-<!-- LOGIN -->
-<div class="login-card">
-<button class="close-btn">&times;</button>
+    <!-- LOGIN -->
+    <div class="login-card">
 
-<h1>Sign in</h1>
-<p class="subtitle">Get access to more features</p>
+        <button class="close-btn">&times;</button>
 
-<p class="switch-text">
-Don't have an account? 
-<a href="#" id="toSignup">Register</a>
-</p>
+        <h1>Đăng nhập</h1>
 
-<div class="social-group">
-<button class="social-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
-</button>
-<button class="social-item"><i class="fab fa-facebook-f"></i></button>
-<button class="social-item"><i class="fab fa-github"></i></button>
-</div>
+        <p class="subtitle">
+            Nhận quyền truy cập vào nhiều tính năng hơn
+        </p>
 
-<div class="divider"><span>or</span></div>
+        <p class="switch-text">
+            Bạn chưa có tài khoản?
+            <a href="#" id="toSignup">Đăng ký</a>
+        </p>
 
-<input type="email" placeholder="Email">
+        <!-- SOCIAL -->
+        <div class="social-group">
 
-<div class="password-box">
-<input type="password" placeholder="Password">
-<i class="far fa-eye toggle-password"></i>
-</div>
+            <button class="social-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
+            </button>
 
-<a href="#" class="forgot-link" id="toForgot">Forgot your password?</a>
+            <button class="social-item">
+                <i class="fab fa-facebook-f"></i>
+            </button>
 
-<button class="btn-signin">Sign In</button>
-</div>
+            <button class="social-item">
+                <i class="fab fa-github"></i>
+            </button>
 
-<!-- SIGNUP -->
-<div class="signup-panel hidden">
-<button class="close-btn">&times;</button>
+        </div>
 
-<h2>Sign up</h2>
+        <div class="divider">
+            <span>hoặc</span>
+        </div>
 
-<p class="signin-text">
-Already have an account? 
-<a href="#" id="toLogin">Sign In</a>
-</p>
+        <!-- EMAIL -->
+        <input type="email" id="loginEmail" placeholder="Email">
+        <p class="error-text" id="emailError"></p>
 
-<div class="social-group">
-<button class="social-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
-</button>
-<button class="social-item"><i class="fab fa-facebook-f"></i></button>
-<button class="social-item"><i class="fab fa-github"></i></button>
-</div>
+        <!-- PASSWORD -->
+        <div class="password-box">
+            <input type="password" id="loginPassword" placeholder="Mật khẩu">
+            <i class="far fa-eye toggle-password"></i>
+        </div>
 
-<div class="divider"><span>or</span></div>
+        <p class="error-text" id="passwordError"></p>
 
-<input type="email" placeholder="Email">
-<input type="text" placeholder="First Name">
-<input type="text" placeholder="Last Name">
+        <button class="btn-signin">
+            Đăng nhập
+        </button>
 
-<div class="password-box">
-<input type="password" placeholder="Password">
-<i class="far fa-eye toggle-password"></i>
-</div>
+    </div>
 
-<button class="btn-signup">Create account</button>
-</div>
+    <!-- SIGNUP -->
+    <div class="signup-panel hidden">
 
-<!-- FORGOT -->
-<div class="forgot-panel hidden">
-<button class="close-btn">&times;</button>
+        <button class="close-btn">&times;</button>
 
-<div class="forgot-content">
-<i class="fa-regular fa-envelope icon"></i>
+        <h2>Đăng ký</h2>
 
-<h2>Reset your password</h2>
+        <p class="signin-text">
+            Bạn đã có tài khoản?
+            <a href="#" id="toLogin">Đăng nhập</a>
+        </p>
 
-<p class="desc">
-If the account exists, we will email instructions to reset the password.
-</p>
+        <!-- SOCIAL -->
+        <div class="social-group">
 
-<input type="email" placeholder="Enter your email address">
+            <button class="social-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg">
+            </button>
 
-<button class="btn-reset">Send reset link</button>
+            <button class="social-item">
+                <i class="fab fa-facebook-f"></i>
+            </button>
 
-<p class="back-text">
-Return to <a href="#" id="backLogin">Sign In</a>
-</p>
-</div>
-</div>
+            <button class="social-item">
+                <i class="fab fa-github"></i>
+            </button>
+
+        </div>
+
+        <div class="divider">
+            <span>hoặc</span>
+        </div>
+
+        <!-- SIGNUP EMAIL -->
+        <input type="email" id="signupEmail" placeholder="Email">
+        <p class="error-text" id="signupEmailError"></p>
+
+        <!-- FIRST NAME -->
+        <input type="text" id="firstName" placeholder="Họ">
+        <p class="error-text" id="firstNameError"></p>
+
+        <!-- LAST NAME -->
+        <input type="text" id="lastName" placeholder="Tên">
+        <p class="error-text" id="lastNameError"></p>
+
+        <!-- PASSWORD -->
+        <div class="password-box">
+            <input type="password" id="signupPassword" placeholder="Mật khẩu">
+            <i class="far fa-eye toggle-password"></i>
+        </div>
+
+        <p class="error-text" id="signupPasswordError"></p>
+
+        <button class="btn-signup">
+            Tạo tài khoản
+        </button>
+
+    </div>
 
 </div>
 
 <script>
 
-const login=document.querySelector(".login-card");
-const signup=document.querySelector(".signup-panel");
-const forgot=document.querySelector(".forgot-panel");
-const overlay=document.getElementById("overlay");
+/* ELEMENT */
+const login = document.querySelector(".login-card");
+const signup = document.querySelector(".signup-panel");
+const overlay = document.getElementById("overlay");
 
-/* SWITCH */
-document.getElementById("toSignup").onclick=e=>{
-e.preventDefault();
-login.classList.add("hidden");
-signup.classList.remove("hidden");
+/* LOGIN -> SIGNUP */
+document.getElementById("toSignup").onclick = e => {
+
+    e.preventDefault();
+
+    login.classList.add("hidden");
+
+    signup.classList.remove("hidden");
 };
 
-document.getElementById("toLogin").onclick=e=>{
-e.preventDefault();
-signup.classList.add("hidden");
-login.classList.remove("hidden");
+/* SIGNUP -> LOGIN */
+document.getElementById("toLogin").onclick = e => {
+
+    e.preventDefault();
+
+    signup.classList.add("hidden");
+
+    login.classList.remove("hidden");
 };
 
-document.getElementById("toForgot").onclick=e=>{
-e.preventDefault();
-login.classList.add("hidden");
-signup.classList.add("hidden");
-forgot.classList.remove("hidden");
-};
+/* CLOSE */
+document.querySelectorAll(".close-btn").forEach(btn => {
 
-document.getElementById("backLogin").onclick=e=>{
-e.preventDefault();
-forgot.classList.add("hidden");
-login.classList.remove("hidden");
-};
+    btn.onclick = () => {
 
-/* CLOSE BUTTON */
-document.querySelectorAll(".close-btn").forEach(btn=>{
-btn.onclick=()=>overlay.style.display="none";
+        overlay.style.display = "none";
+    };
+
 });
 
 /* CLICK OUTSIDE */
-overlay.onclick=e=>{
-if(e.target===overlay) overlay.style.display="none";
+overlay.onclick = e => {
+
+    if(e.target === overlay){
+
+        overlay.style.display = "none";
+    }
 };
 
 /* ESC */
-document.onkeydown=e=>{
-if(e.key==="Escape") overlay.style.display="none";
+document.onkeydown = e => {
+
+    if(e.key === "Escape"){
+
+        overlay.style.display = "none";
+    }
+};
+
+/* TOGGLE PASSWORD */
+document.querySelectorAll(".toggle-password").forEach(icon => {
+
+    icon.addEventListener("click", () => {
+
+        const input = icon.previousElementSibling;
+
+        if(input.type === "password"){
+
+            input.type = "text";
+
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+
+        }else{
+
+            input.type = "password";
+
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+
+    });
+
+});
+
+/* LOGIN VALIDATION */
+document.querySelector(".btn-signin").onclick = () => {
+
+    const email = document.getElementById("loginEmail");
+    const password = document.getElementById("loginPassword");
+
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+
+    /* RESET */
+    email.classList.remove("error");
+    password.classList.remove("error");
+
+    emailError.style.display = "none";
+    passwordError.style.display = "none";
+
+    let isValid = true;
+
+    /* EMAIL RỖNG */
+    if(email.value.trim() === ""){
+
+        email.classList.add("error");
+
+        emailError.innerText = "Vui lòng nhập email";
+        emailError.style.display = "block";
+
+        isValid = false;
+    }
+
+    /* EMAIL FORMAT */
+    else{
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if(!email.value.match(emailPattern)){
+
+            email.classList.add("error");
+
+            emailError.innerText = "Email không hợp lệ";
+            emailError.style.display = "block";
+
+            isValid = false;
+        }
+
+    }
+
+    /* PASSWORD */
+    if(password.value.trim() === ""){
+
+        password.classList.add("error");
+
+        passwordError.innerText = "Vui lòng nhập password";
+        passwordError.style.display = "block";
+
+        isValid = false;
+    }
+
+    /* SUCCESS */
+    if(isValid){
+
+        alert("Đăng nhập thành công!");
+
+        window.location.href = "menu.html";
+    }
+
+};
+
+/* SIGNUP VALIDATION */
+document.querySelector(".btn-signup").onclick = () => {
+
+    const email = document.getElementById("signupEmail");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const password = document.getElementById("signupPassword");
+
+    const emailError = document.getElementById("signupEmailError");
+    const firstNameError = document.getElementById("firstNameError");
+    const lastNameError = document.getElementById("lastNameError");
+    const passwordError = document.getElementById("signupPasswordError");
+
+    /* RESET */
+    [email, firstName, lastName, password].forEach(input => {
+        input.classList.remove("error");
+    });
+
+    [emailError, firstNameError, lastNameError, passwordError].forEach(err => {
+        err.style.display = "none";
+    });
+
+    let isValid = true;
+
+    /* EMAIL */
+    if(email.value.trim() === ""){
+
+        email.classList.add("error");
+
+        emailError.innerText = "Vui lòng nhập email";
+        emailError.style.display = "block";
+
+        isValid = false;
+    }
+
+    else{
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if(!email.value.match(emailPattern)){
+
+            email.classList.add("error");
+
+            emailError.innerText = "Email không hợp lệ";
+            emailError.style.display = "block";
+
+            isValid = false;
+        }
+
+    }
+
+    /* FIRST NAME */
+    if(firstName.value.trim() === ""){
+
+        firstName.classList.add("error");
+
+        firstNameError.innerText = "Vui lòng nhập First Name";
+        firstNameError.style.display = "block";
+
+        isValid = false;
+    }
+
+    /* LAST NAME */
+    if(lastName.value.trim() === ""){
+
+        lastName.classList.add("error");
+
+        lastNameError.innerText = "Vui lòng nhập Last Name";
+        lastNameError.style.display = "block";
+
+        isValid = false;
+    }
+
+    /* PASSWORD */
+    if(password.value.trim() === ""){
+
+        password.classList.add("error");
+
+        passwordError.innerText = "Vui lòng nhập password";
+        passwordError.style.display = "block";
+
+        isValid = false;
+    }
+
+    /* SUCCESS */
+    if(isValid){
+
+        alert("Đăng ký thành công!");
+
+        window.location.href = "menu.html";
+    }
+
 };
 
 </script>
