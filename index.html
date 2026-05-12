@@ -4,61 +4,47 @@
     <meta charset="UTF-8">
     <title>E-Learning Layout</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        const lessons = document.querySelectorAll('.lesson-item');
-
-        lessons.forEach(lesson => {
-            lesson.addEventListener('click', function() {
-                const currentActive = document.querySelector('.lesson-item.active');
-                if (currentActive) {
-                    currentActive.classList.remove('active');
-                }
-
-                this.classList.add('active');
-            });
-        });
-    </script>
 </head>
 <body>
     <header class="navbar">
         <div class = "nav-left">
-            <div class="nav-item">Home</div>
+            <a href="Home.html" class="nav-item">Home</a>
             <div class="nav-item dropdown">
                 Data Structures
                 <div class="dropdown-content">
                     <div class="submenu-container">
                         <a class="has-submenu">Array</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Linked List</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Stack</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Queue</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Tree</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                 </div>
@@ -69,15 +55,15 @@
                     <div class="submenu-container">
                         <a class="has-submenu">Search</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Sort</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="index.html">Kiến thức</a>
+                            <a href="exercise.html">Bài tập</a>
                         </div>
                     </div>
                 </div>
@@ -85,7 +71,7 @@
             <div class="nav-item dropdown">
                 More option
                 <div class="dropdown-content">
-                    <a href="#">Donate</a>
+                    <a href="Donate.html">Donate</a>
                     <a href="#">Feedback</a>
                 </div>
             </div>
@@ -108,15 +94,23 @@
         </aside>
 
         <main class="content">
-            <h1>Name course</h1>
-            <h3>Lesson n</h3>
+            <div class="content-list">
+                <h1>Name course: </h1>
+                <h3>Lesson 1</h3>
+            </div>
             <div class="video-placeholder">
                 Video about lesson
             </div>
-            <p class="info-text">Information more about lesson: </p>
+            <div class="lesson-info">
+                <h3>Information more about lesson:</h3>
+                <ul class="lesson-info-list ">
+                    <li>Định nghĩa về mảng.</li>
+                    <li>Ý nghĩa của mảng.</li>
+                    <li>Ứng dụng thực tế.</li>
+                </ul>
+            </div>
         </main>
     </div>
-
     <button class="btn-up">Up</button>
 </body>
 </html>
