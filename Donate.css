@@ -9,6 +9,8 @@
     grid-template-columns:  3fr 2fr;
     grid-template-rows: auto 1fr auto;
     background-color: white;
+    gap: 30px;
+    align-items: stretch;
 }
 
 html{
@@ -135,6 +137,17 @@ nav ul li a:hover{
     /* background-color: rgb(205, 188, 188); */
     flex-direction: column;
 }
+
+.donate-box{
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 
 .box{
     display: flex;
