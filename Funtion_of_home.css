@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto 1fr auto;
     background-color: white;
+    gap: 15px;
 }
 
 html{
@@ -22,26 +23,6 @@ body {
     color: #333;
 }
 
-nav ul{
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;   
-    margin: 0;    
-
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 15px;
-}
-
-nav ul li a:hover{
-    background-color: beige;
-    color: black;
-}
 
 header{
     grid-column: 1/4;
@@ -169,6 +150,7 @@ header{
     border: 1px solid black;
     border-radius: 2px;
     margin: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .box2{
@@ -182,12 +164,12 @@ header{
 
 .box:hover{
     transform: translateY(-5px);
-    box-shadow: 5px 5px black;
+    box-shadow: 2px 2px black;
 }
 
 .box1:hover{
     transform: translateY(-5px);
-    box-shadow: 5px 5px black;
+    box-shadow: 2px 2px black;
 }
 
 footer{
