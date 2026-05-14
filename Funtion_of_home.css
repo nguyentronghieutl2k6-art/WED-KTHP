@@ -60,14 +60,27 @@ header{
     border-bottom: 1px solid #ccc;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: inherit; 
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .nav-item {
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
+    transition: 0.3s;
 }
 
 .nav-item:hover {
-    background-color: #d0d0d0;
+    background-color: white;
+    color: #3B82F6;
     border-radius: 4px;
 }
 
@@ -204,4 +217,3 @@ footer{
 nav{
     display: flex;
 }
-
