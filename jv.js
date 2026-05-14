@@ -39,3 +39,10 @@ loginButton.forEach(item => {
         window.location.href = "Log.html";
     });
 });
+
+const donateBtn = document.getElementById("donateBtn");
+const previewBox = document.getElementById("previewBox");
+
+donateBtn.addEventListener("click", function () {
+    previewBox.style.display = "block";
+});
