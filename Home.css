@@ -197,7 +197,7 @@ nav{
     grid-column: 1/4;
     grid-row: 2/3;
     height: 50vh;
-    background: url("hero-bg.jpg") no-repeat center/cover;
+    background: url("image/hero-bg.jpg") no-repeat center/cover;
     color: white;
     position: relative;
     display: flex;
