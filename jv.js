@@ -12,3 +12,16 @@ protectedItems.forEach(item => {
 
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const amountInput = document.getElementById('custom-amount');
+    const priceButtons = document.querySelectorAll('.row .box');
+
+    priceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let value = button.textContent;
+            let numericValue = value.replace('$', '');
+            amountInput.value = numericValue;
+        });
+    });
+});
