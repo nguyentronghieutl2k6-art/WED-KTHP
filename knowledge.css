@@ -292,10 +292,6 @@ body {
     transition: 0.2s;
 }
 
-.search-box{
-    border-radius: 4px;
-}
-
 footer{
     background-color: rgb(124, 144, 151);
     display: flex;

@@ -120,7 +120,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* Phần nộp bài */
 .drop-zone {
     border: 2px dashed #3B82F6;
     padding: 30px;
@@ -152,7 +151,6 @@ body {
     font-weight: bold;
 }
 
-/* Phần nhận xét */
 .comment-item {
     border-left: 4px solid #0b5d3b;
     padding-left: 15px;

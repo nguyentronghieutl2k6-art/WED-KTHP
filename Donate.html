@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href = "style1.css">
+    <title>Donate</title>
+    <link rel="stylesheet" href="Donate.css">
 </head>
 <body>
-    <header class="navbar">
+    <div class="container">
+        <header class="navbar">
         <div class = "nav-left">
             <div class="nav-item">Home</div>
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown protected">
                 Data Structures
                 <div class="dropdown-content">
                     <div class="submenu-container">
@@ -50,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown protected">
                 Algorithms  
                 <div class = "dropdown-content">
                     <div class="submenu-container">
@@ -84,36 +85,43 @@
         </div>
     </header>
 
-    <div class="grid-container">
-        <!-- Header Row -->
-        <div class="header-path">Learning path</div>
-        <div class="header-course">Course</div>
 
-        <!-- Row 1 -->
-        <div class="path-cell">Pathway A</div>
-        <div class="course-grid">
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
+        <div class="left">
+            <div class="donate-box">
+                <h2>Donation Amount</h2>
+            <div class="row">
+                <button class="box">$5</button>
+                <button class="box">$10</button>
+                <button class="box">$25</button>
+            </div>
+            <div class="row">
+                <button class="box">$50</button >
+                <button class="box">$100</button>
+                <button class="box">$200</button>
+            </div>
+           <h2>Custom Amount</h2>
+            <font>
+                <input type="number" id="custom-amount" placeholder="Enter custom amount">
+            </font>
+            <button>Donate now</button>
+            </div>
+            
         </div>
-
-        <!-- Row 2 -->
-        <div class="path-cell">Pathway A</div>
-        <div class="course-grid">
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="path-cell">Pathway A</div>
-        <div class="course-grid">
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
-            <div class="course-card">Course A</div>
+        <div class="right">
+            <div class="donate-box">
+                <h2>Preview</h2>
+                <img src="#" alt="QR code">
+            </div>
         </div>
     </div>
-
-    <button class="btn-up">Up</button>
+    <footer>
+            <div>
+            <h2>Contact Us</h2>
+            <p>Email: info@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Address: 123 Main St, Anytown, USA</p>
+        </div>
+        </footer>
+         <script src="jv.js" ></script>
 </body>
 </html>
