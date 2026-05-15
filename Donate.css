@@ -215,4 +215,6 @@ footer{
     padding: 15px;
 }
 
-
+#previewBox{
+    display: none;
+}
