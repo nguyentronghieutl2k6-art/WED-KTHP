@@ -8,23 +8,100 @@
 </head>
 <body>
     <div class="container">
-        <header class="navbar">
+        <!-- <header class="navbar">
         <div class = "nav-left">
-            <div class="nav-item">Home</div>
+            <a href="Home.html" class="nav-item">Home</a>
             <div class="nav-item dropdown protected">
                 Data Structures
                 <div class="dropdown-content">
                     <div class="submenu-container">
                         <a class="has-submenu">Array</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
-                            <a href="#">Bài tập</a>
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
                         </div>
                     </div>
                     <div class="submenu-container">
                         <a class="has-submenu">Linked List</a>
                         <div class="submenu-content">
-                            <a href="#">Kiến thức</a>
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Stack</a>
+                        <div class="submenu-content">
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Queue</a>
+                        <div class="submenu-content">
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Tree</a>
+                        <div class="submenu-content">
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item dropdown protected">
+                Algorithms  
+                <div class = "dropdown-content">
+                    <div class="submenu-container">
+                        <a class="has-submenu">Search</a>
+                        <div class="submenu-content">
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Sort</a>
+                        <div class="submenu-content">
+                            <a href="#">Knowledge</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                More option
+                <div class="dropdown-content">
+                    <a href="#">Donate</a>
+                    <a href="#">Feedback</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class = "nav-right">
+            <div class="search-box"><input type="text" placeholder="Research...."></div>
+            <div  class="nav-item loginButton">Account</div>
+        </div>
+    </header> -->
+
+    <header class="navbar">
+        <div class = "nav-left">
+            <a href="Home.html" class="nav-item">Home</a>
+            <div class="nav-item dropdown">
+                Data Structures
+                <div class="dropdown-content">
+                    <div class="submenu-container">
+                        <a class="has-submenu">Array</a>
+                        <div class="submenu-content">
+                            <a href="knowledge of arrays.html">Kiến thức</a>
+                            <a href="array exercises.html">Bài tập</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Linked List</a>
+                        <div class="submenu-content">
+                            <a href="knowledge of LL.html">Kiến thức</a>
                             <a href="#">Bài tập</a>
                         </div>
                     </div>
@@ -51,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="nav-item dropdown protected">
+            <div class="nav-item dropdown">
                 Algorithms  
                 <div class = "dropdown-content">
                     <div class="submenu-container">
@@ -73,44 +150,56 @@
             <div class="nav-item dropdown">
                 More option
                 <div class="dropdown-content">
-                    <a href="#">Donate</a>
+                    <a href="Donate.html">Donate</a>
                     <a href="#">Feedback</a>
                 </div>
             </div>
         </div>
         
-        <div class = "nav-right">
-            <div class="search-box"><input type="text" placeholder="Research...."></div>
-            <div class="nav-item">Account</div>
-        </div>
-    </header>
+            <div class="nav-right">
+                <div class="search-box"><input type="text" placeholder="Research...."></div>
+                <div class="nav-item" id="account-menu">
+                    <a href="Log.html" style="text-decoration: none; color: inherit;">Sign In</a>
+                </div>
+            </div>
+        </header>
 
 
+    <!-- Top Donate Section -->
+    <section class="Top-donate">
+        <h1>Recent supporters ❤️</h1>
+        <p>Your donation helps us continue to provide valuable resources and support to our community. Every contribution, big or small, makes a difference. Thank you for your generosity!</p>
+    </section>
+
+    <!-- Main Content -->
         <div class="left">
             <div class="donate-box">
                 <h2>Donation Amount</h2>
             <div class="row">
-                <button class="box">$5</button>
-                <button class="box">$10</button>
-                <button class="box">$25</button>
+                <button class="box donateBtn">$5</button>
+                <button class="box donateBtn">$10</button>
+                <button class="box donateBtn">$25</button>
             </div>
             <div class="row">
-                <button class="box">$50</button >
-                <button class="box">$100</button>
-                <button class="box">$200</button>
+                <button class="box donateBtn">$50</button >
+                <button class="box donateBtn">$100</button>
+                <button class="box donateBtn">$200</button>
             </div>
            <h2>Custom Amount</h2>
             <font>
                 <input type="number" placeholder="Enter custom amount">
             </font>
-            <button>Donate now</button>
+            <button type="button" class="donateBtn">Donate now</button>
             </div>
             
         </div>
-        <div class="right">
+        <div class="right" id = "previewBox">
             <div class="donate-box">
-                <h2>Preview</h2>
-                <img src="#" alt="QR code">
+                <h2>Preview:</h2>
+                <div class="QR-card">
+                    <img src="image/QR.jpg" alt="QR code">
+                    <h2>Scan this QR code to donate</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -122,6 +211,22 @@
             <p>Address: 123 Main St, Anytown, USA</p>
         </div>
         </footer>
-         <script src="jv.js" ></script>
+         <script>
+            const donateBtn = document.querySelectorAll(".donateBtn");
+            const previewBox = document.getElementById("previewBox");
+
+            if(donateBtn && previewBox){
+
+                donateBtn.forEach(btn => {
+                    btn.addEventListener("click", function () {
+
+                    previewBox.style.display = "flex";
+
+                    });
+                });
+            }
+         </script>
 </body>
 </html>
+
+<!-- them tinh nang khi an vao tung muc gia anh hien ra khac nhau -->

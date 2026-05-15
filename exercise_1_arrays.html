@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Mảng cho Newbie</title>
+    <link rel="stylesheet" href="exercise_1_array.css">
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            border-left: 3px solid #3B82F6;
+            overflow-x: auto;
+        }
+        .file-info {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="Home.html" class="nav-item">Home</a>
+            <div class="nav-item dropdown">
+                Data Structures
+                <div class="dropdown-content">
+                    <div class="submenu-container">
+                        <a class="has-submenu">Array</a>
+                        <div class="submenu-content">
+                            <a href="knowledge of arrays.html">Lessons</a>
+                            <a href="array exercises.html">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Linked List</a>
+                        <div class="submenu-content">
+                            <a href="knowledge of LL.html">Lessons</a>
+                            <a href="LL exercises.html">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Stack</a>
+                        <div class="submenu-content">
+                            <a href="#">Lessons</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Queue</a>
+                        <div class="submenu-content">
+                            <a href="#">Lessons</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Tree</a>
+                        <div class="submenu-content">
+                            <a href="#">Lessons</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                Algorithms  
+                <div class="dropdown-content">
+                    <div class="submenu-container">
+                        <a class="has-submenu">Search</a>
+                        <div class="submenu-content">
+                            <a href="#">Lessons</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                    <div class="submenu-container">
+                        <a class="has-submenu">Sort</a>
+                        <div class="submenu-content">
+                            <a href="#">Lessons</a>
+                            <a href="#">Exercises</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                More option
+                <div class="dropdown-content">
+                    <a href="Donate.html">Donate</a>
+                    <a href="#">Feedback</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="search-box"><input type="text" placeholder="Research...."></div>
+            <div class="nav-item" id="account-menu">Account</div>
+        </div>
+    </header>
+    
+    <div class="exercise-layout">
+        <div class="exercise-main">
+            <section class="section-box">
+                <h2>Đề bài: Tính toán trên Mảng Số Nguyên</h2>
+                <div class="content-text">
+                    <p><strong>Chủ đề:</strong> Thao tác cơ bản với mảng một chiều (Array cho Newbie).</p>
+                    <p>Cho một mảng gồm n số nguyên dương. Bạn hãy viết chương trình thực hiện hai yêu cầu sau:</p>
+                    <ol style="padding-left: 20px; margin-bottom: 15px; line-height: 1.6;">
+                        <li>Tìm và in ra số lớn nhất (Max) có trong mảng.</li>
+                        <li>Tính trung bình cộng của tất cả các phần tử trong mảng (kết quả làm tròn đến 2 chữ số thập phân).</li>
+                    </ol>
+                    
+                    <pre>
+                        <strong>Ví dụ:</strong>
+                        Input:  [3, 8, 1, 6, 12]
+                        Output: 
+                        - Số lớn nhất: 12
+                        - Trung bình cộng: 6.00
+                    </pre>
+                </div>
+            </section>
+
+            <section class="section-box">
+                <h2>Nhận xét & Gợi ý từ Giảng viên</h2>
+                <div class="comments-container">
+                    <div class="comment-item">
+                        <div class="comment-user"><strong>Thầy Phan Văn T</strong> <span class="date">14/05/2026</span></div>
+                        <p>Đối với các bạn mới bắt đầu, hãy dùng một biến <code>max</code> tạm thời, gán nó bằng phần tử đầu tiên <code>arr[0]</code>, sau đó dùng vòng lặp <code>for</code> quét qua mảng để so sánh và cập nhật nhé.</p>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-user"><strong>Trợ giảng Admin</strong> <span class="date">14/05/2026</span></div>
+                        <p>Lưu ý khi tính trung bình cộng: Hãy ép kiểu tổng số nguyên sang kiểu số thực (float/double) trước khi chia cho số lượng phần tử n, nếu không kết quả sẽ bị mất phần thập phân!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="exercise-sidebar">
+            <section class="section-box upload-area">
+                <h2>Nộp bài</h2>
+                <div class="drop-zone" id="drop-zone">
+                    <p>Kéo thả file mã nguồn (.cpp, .py, .c) vào đây hoặc</p>
+                    <label for="file-upload" class="btn-select">Chọn file</label>
+                    <input type="file" id="file-upload" hidden>
+                </div>
+                <div class="file-info" id="file-info">Chưa có file nào được chọn</div>
+                <button class="btn-submit" id="submit-btn">Nộp bài ngay</button>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const fileUpload = document.getElementById('file-upload');
+        const fileInfo = document.getElementById('file-info');
+        const submitBtn = document.getElementById('submit-btn');
+
+        fileUpload.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                fileInfo.textContent = `File đã chọn: ${e.target.files[0].name}`;
+                fileInfo.style.color = "#0b5d3b";
+                fileInfo.style.fontWeight = "bold";
+            } else {
+                fileInfo.textContent = "Chưa có file nào được chọn";
+                fileInfo.style.color = "#666";
+            }
+        });
+
+        submitBtn.addEventListener('click', () => {
+            if (fileUpload.files.length > 0) {
+                alert(`Nộp bài thành công file: ${fileUpload.files[0].name}!`);
+            } else {
+                alert("Vui lòng chọn hoặc kéo thả file mã nguồn trước khi nộp!");
+            }
+        });
+    </script>
+    <script src="jv.js"></script>
+</body>
+</html>
