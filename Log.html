@@ -16,30 +16,36 @@
     .overlay{
         position:fixed;
         inset:0;
-        background:rgba(0,0,0,0.4);
+        background-image: url('anh_nen.jpg');
+        background-size: cover;      
+        background-position: center; 
+        background-repeat: no-repeat;
         display:flex;
-        justify-content:flex-end;
-        align-items:flex-start;
+        justify-content:center;
+        align-items:center;
         padding:20px;
+        z-index: 1000;
     }
 
     .login-card,
     .signup-panel{
-        width:320px;
+        background: rgba(255, 255, 255, 0.2); 
+        backdrop-filter: blur(10px);          
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width:450px;
         background:#fff;
-        padding:20px;
-        border-radius:10px;
+        padding:35px;
+        border-radius:20px;
         box-shadow:0 10px 25px rgba(0,0,0,0.2);
-        position:absolute;
-        top:20px;
-        right:20px;
+        position:relative;
         transition:0.3s;
     }
 
     .hidden{
-        opacity:0;
-        pointer-events:none;
-        transform:translateX(40px);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9); 
+    position: absolute;
     }
 
     h1,h2{
