@@ -209,13 +209,13 @@
     <div class="overlay" id="overlay">
         <div class="login-card">
             <button class="close-btn">&times;</button>
-            <h1>Đăng nhập</h1>
+            <h1>Sign in</h1>
             <p class="subtitle">
-                Nhận quyền truy cập vào nhiều tính năng hơn
+                Get access to more learning features
             </p>
             <p class="switch-text">
-                Bạn chưa có tài khoản?
-                <a href="#" id="toSignup">Đăng ký</a>
+                Don't have an account?
+                <a href="#" id="toSignup">Register</a>
             </p>
 
             <div class="social-group">
@@ -231,30 +231,30 @@
             </div>
 
             <div class="divider">
-                <span>hoặc</span>
+                <span>or</span>
             </div>
 
             <input type="email" id="loginEmail" placeholder="Email">
             <p class="error-text" id="emailError"></p>
 
                 <div class="password-box">
-                    <input type="password" id="loginPassword" placeholder="Mật khẩu">
+                    <input type="password" id="loginPassword" placeholder="Password">
                     <i class="far fa-eye toggle-password"></i>
                 </div>
 
                 <p class="error-text" id="passwordError"></p>
 
                 <button class="btn-signin">
-                    Đăng nhập
+                    Sign in
                 </button>
             </div>
 
             <div class="signup-panel hidden">
                 <button class="close-btn">&times;</button>
-                <h2>Đăng ký</h2>
+                <h2>Register</h2>
                 <p class="signin-text">
-                    Bạn đã có tài khoản?
-                    <a href="#" id="toLogin">Đăng nhập</a>
+                    Already have an account?
+                    <a href="#" id="toLogin">Sign in</a>
                 </p>
 
                 <div class="social-group">
@@ -270,27 +270,27 @@
                 </div>
 
                 <div class="divider">
-                    <span>hoặc</span>
+                    <span>or</span>
                 </div>
 
                 <input type="email" id="signupEmail" placeholder="Email">
                 <p class="error-text" id="signupEmailError"></p>
 
-                <input type="text" id="firstName" placeholder="Họ">
+                <input type="text" id="firstName" placeholder="First name">
                 <p class="error-text" id="firstNameError"></p>
 
-                <input type="text" id="lastName" placeholder="Tên">
+                <input type="text" id="lastName" placeholder="Last name">
                 <p class="error-text" id="lastNameError"></p>
 
                 <div class="password-box">
-                    <input type="password" id="signupPassword" placeholder="Mật khẩu">
+                    <input type="password" id="signupPassword" placeholder="Password">
                     <i class="far fa-eye toggle-password"></i>
                 </div>
 
                 <p class="error-text" id="signupPasswordError"></p>
 
                 <button class="btn-signup">
-                    Tạo tài khoản
+                    Create account
                 </button>
             </div>
         </div>
@@ -358,7 +358,7 @@
 
             if(email.value.trim() === ""){
                 email.classList.add("error");
-                emailError.innerText = "Vui lòng nhập email";
+                emailError.innerText = "Please enter your email address.";
                 emailError.style.display = "block";
                 isValid = false;
             }
@@ -367,7 +367,7 @@
                 const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
                 if(!email.value.match(emailPattern)){
                     email.classList.add("error");
-                    emailError.innerText = "Email không hợp lệ";
+                    emailError.innerText = "Invalid email";
                     emailError.style.display = "block";
                     isValid = false;
                 }
@@ -375,13 +375,13 @@
 
             if(password.value.trim() === ""){
                 password.classList.add("error");
-                passwordError.innerText = "Vui lòng nhập password";
+                passwordError.innerText = "Please enter the password.";
                 passwordError.style.display = "block";
                 isValid = false;
             }
 
             if(isValid){
-                alert("Đăng nhập thành công!");
+                alert("Login successful!");
                 localStorage.setItem("isLoggedIn", "true"); 
                 localStorage.setItem("userEmail", email.value);
                 window.location.href = "Home.html";
@@ -410,7 +410,7 @@
 
             if(email.value.trim() === ""){
                 email.classList.add("error");
-                emailError.innerText = "Vui lòng nhập email";
+                emailError.innerText = "Please enter your email address.";
                 emailError.style.display = "block";
                 isValid = false;
             }
@@ -418,7 +418,7 @@
                 const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
                 if(!email.value.match(emailPattern)){
                     email.classList.add("error");
-                    emailError.innerText = "Email không hợp lệ";
+                    emailError.innerText = "Invalid email";
                     emailError.style.display = "block";
                     isValid = false;
                 }
@@ -427,27 +427,27 @@
 
             if(firstName.value.trim() === ""){
                 firstName.classList.add("error");
-                firstNameError.innerText = "Vui lòng nhập First Name";
+                firstNameError.innerText = "Please enter your First Name";
                 firstNameError.style.display = "block";
                 isValid = false;
             }
 
             if(lastName.value.trim() === ""){
                 lastName.classList.add("error");
-                lastNameError.innerText = "Vui lòng nhập Last Name";
+                lastNameError.innerText = "Please enter your Last Name";
                 lastNameError.style.display = "block";
                 isValid = false;
             }
 
             if(password.value.trim() === ""){
                 password.classList.add("error");
-                passwordError.innerText = "Vui lòng nhập password";
+                passwordError.innerText = "Please enter the password.";
                 passwordError.style.display = "block";
                 isValid = false;
             }
 
             if(isValid){
-                alert("Đăng ký thành công!");
+                alert("Registration successful!");
                 localStorage.setItem("isLoggedIn", "true"); 
                 localStorage.setItem("userEmail", email.value);
                 window.location.href = "Home.html";
