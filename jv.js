@@ -39,34 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const authButtons = document.querySelectorAll(".requires-auth");
-
-    authButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            if (isLoggedIn === "true") {
-                const targetUrl = this.getAttribute("data-url");
-                window.location.href = targetUrl;
-            } else {
-                alert("Bạn phải đăng nhập để vào học khóa Arrays hoặc Linked list!");
-                window.location.href = "Log.html";
-            }
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const amountInput = document.getElementById('custom-amount');
-    const priceButtons = document.querySelectorAll('.row .box');
-
-    priceButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            let value = button.textContent;
-            let numericValue = value.replace('$', '');
-            amountInput.value = numericValue;
-        });
-    });
-});
-
 const btnUp = document.querySelector('.btn-up');
 btnUp.addEventListener('click', function() {
     window.scrollTo({
